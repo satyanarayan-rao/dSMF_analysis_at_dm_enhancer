@@ -204,6 +204,17 @@ Data:
 $ cd data/figure6/panel_d
 $ Rscript three_groups.R
 $ cd plots_imb
-$ ls onlyQ4*.pdf
+
+```
+
+#### Panel E and F: ChIP and CATCH-IT analysis
+
+Data:
+- `data/figure6/panel_e_and_f/`
+
+
+```
+$ cd data/figure6/panel_e_and_f/ 
+$ Rscript Analysis_wFlag_clean.R
 ```
 
