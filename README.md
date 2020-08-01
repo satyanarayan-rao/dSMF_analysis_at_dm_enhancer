@@ -118,4 +118,92 @@ Data:
 
 ```
 $ gnuplot data/figure4/panel_i/1kb_all_log2_plot.plt 
+
 ```
+
+### Figure 5 
+
+#### Panel A: DNA molecule count distribution
+
+Data:
+- `data/figure5/panel_a/cobinding_data_with_normalized_extent_of_cobinding.tsv`
+
+```
+$ Rscript scripts/cobinding_dna_molecule_count_distribution.R data/figure5/panel_a/cobinding_data_with_normalized_extent_of_cobinding.tsv
+```
+
+
+#### Panel B: 
+
+#### Panel C: Cobinding example plot 
+
+Data:
+
+- Methylation vector: `data/figure5/panel_c/peak_110_4_dist_78/peak_110_4_dist_78_nine_state_mvec.tsv`
+- Footprint vector: `data/figure5/panel_c/peak_110_4_dist_78/peak_110_4_dist_78_nine_state_fp.tsv`
+
+```
+$ cd data/figure5/panel_c/peak_110_4_dist_78/
+$ sh ../scripts/plot_all.sh peak_110_4_dist_78 
+```
+
+Figures are found in: 
+- `data/figure5/panel_c/peak_110_4_dist_78/peak_methylation.pdf`
+- `data/figure5/panel_c/peak_110_4_dist_78/peak_footprint.pdf`
+
+
+#### Panel D: Six state ccupancy boxplots
+
+Data: 
+- `data/figure5/panel_d/cobinding_data_six_states.tsv`
+
+```
+$ Rscript scripts/boxplt_cobinding_six_states.R data/figure5/panel_d/cobinding_data_six_states.tsv
+```
+
+### Figure 6
+
+#### Panel A: extent of co-binding analysis
+
+Data:
+
+- `data/figure6/panel_a/normalized_extent_of_cobinding.tsv`
+
+```
+$ Rscript scripts/phyper_extent_of_cobinding.R data/figure6/panel_a/normalized_extent_of_cobinding.tsv
+```
+
+#### Panel B: Frequnecy of number of enhancers with co-binding events
+
+Data:
+- `data/figure6/panel_b/cobinding_frequency_at_enh.tsv`
+
+```
+$ cd data/figure6/panel_b
+$ gnuplot barplt.gplt
+```
+
+
+#### Panel C: Peak distance distribution agiainst extent of co-binding 
+
+Data:
+
+- `data/figure6/panel_c/dist_(1,2,3,4).hist`
+
+```
+$ cd data/figure6/panel_c
+$ gnuplot line_plot.gplt
+```
+
+#### Panel D: Boxplot of occupancies for different classes of co-binders
+
+Data: 
+- `data/figure6/panel_d/imb_with_occupancy_data.tsv`
+
+```
+$ cd data/figure6/panel_d
+$ Rscript three_groups.R
+$ cd plots_imb
+$ ls onlyQ4*.pdf
+```
+
