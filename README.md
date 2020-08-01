@@ -33,12 +33,54 @@ $ Rscript scripts/plot_percentage_methylation_on_reads.R \
 ```
 
 
+#### Panel B: Example footprints
+
+#### Panel C, D: Footprints 
+
+Data: 
+
+
+MNase data:  `data/figure4/panel_c_and_d/mnase_data.tsv`
+
+
++ Methylation vector: 
+
+- With sam flag 83-163: `data/figure4/panel_c_and_d/mvec_83_order.tsv` 
+- With sam flag 99-147: `data/figure4/panel_c_and_d/mvec_99_order.tsv` 
+
++ Footprint vector:
+
+- With sam flag 83-163: `data/figure4/panel_c_and_d/83_order.tsv`
+- With sam flag 99-147: `data/figure4/panel_c_and_d/99_order.tsv`
+
+
+First order footrpints based on footprint length and location and then plot: 
+
+```
+$ cd data/figure4/panel_c_and_d/ 
+$ sh order_by_flen_and_loc.sh 
+$ gnuplot  peak_229_3_methylation.gplt 
+$ gnuplot  peak_229_3_footprint.gplt 
+```
+
+#### Panel E: Obs vs expected footprint length distribution in open and closed enhancers
+
+Data: 
+
+- Observed (Open): `data/figure4/panel_e/open_130_5bp.hist` 
+- Observed (Closed): `data/figure4/panel_e/closed_130_5bp.hist` 
+
+```
+$ gnuplot data/figure4/panel_e/obs_vs_expected.gplt
+```
+
+
 #### Panel F: Percentage occupancies of Naked, TF, and Nucleosome
 
 Data:
 
-- `data/figure4/panel_e/occupancy_open.tsv`
-- `data/figure4/panel_e/occupancy_closed.tsv`
+- `data/figure4/panel_f/occupancy_open.tsv`
+- `data/figure4/panel_f/occupancy_closed.tsv`
 
 ```
 $ Rscript scripts/bxplt_violin.R
