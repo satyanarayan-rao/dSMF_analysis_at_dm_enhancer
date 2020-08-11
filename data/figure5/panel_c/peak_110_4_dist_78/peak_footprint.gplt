@@ -1,0 +1,37 @@
+reset
+set terminal postscript size 4.5in,7.5in font 'Arial, 15'
+set tmargin 1
+set bmargin 0
+set lmargin 3
+set rmargin 3
+set xra [-150: 150]
+unset xtics
+unset ytics
+unset colorbox
+set style rect fc lt -1 fs solid 0.1 noborder
+set obj rect from -15, graph 0 to 15, graph 1
+set obj rect from 63, graph 0 to 93, graph 1
+set output 'peak_footprint.eps'
+set multiplot layout 12, 1
+plot 'peak_110_4_mnase.tsv' u 1:2 w l lc rgb "#31a354" lw 2  notitle
+load '../scripts/footprint_params.gplt'
+set arrow 1 from -200 , 17 to 150, 17 front lc rgb "#636363" lw 2 nohead
+set label 1 "n = 17" at -160, 8.5 right front
+set arrow 2 from -200 , 28 to 150, 28 front lc rgb "#636363" lw 2 nohead
+set label 2 "n = 11" at -160, 22.5 right front
+set arrow 3 from -200 , 41 to 150, 41 front lc rgb "#636363" lw 2 nohead
+set label 3 "n = 13" at -160, 34.5 right front
+set arrow 4 from -200 , 65 to 150, 65 front lc rgb "#636363" lw 2 nohead
+set label 4 "n = 24" at -160, 53 right front
+set arrow 5 from -200 , 69 to 150, 69 front lc rgb "#636363" lw 2 nohead
+set label 5 "n = 4" at -160, 67 right front
+set arrow 6 from -200 , 74 to 150, 74 front lc rgb "#636363" lw 2 nohead
+set label 6 "n = 5" at -160, 71.5 right front
+set arrow 7 from -200 , 74 to 150, 74 front lc rgb "#636363" lw 2 nohead
+set label 7 "n = 0" at -160, 74 right front
+set arrow 8 from -200 , 81 to 150, 81 front lc rgb "#636363" lw 2 nohead
+set label 8 "n = 7" at -160, 77.5 right front
+set arrow 9 from -200 , 113 to 150, 113 front lc rgb "#636363" lw 2 nohead
+set label 9 "n = 16" at -160, 89 right front
+set yra [97:0]
+plot 'fp_sort' mat u ($1 -300):2:3 w image notitle

@@ -1,0 +1,29 @@
+reset
+set terminal postscript size 6,6 font 'Arial, 15'
+set size ratio 2
+#set palette defined (0 '#e66101', 0.25 '#fdb863', 0.5 '#ffffff', 0.75 '#b2abd2', 1 '#5e3c99')
+#set palette defined (0 '#5e3c99', 0.25 '#b2abd2', 0.5 '#ffffff', 0.75 '#fdb863', 1 '#e66101')
+#set palette defined (0 '#fee8c8', 0.5 '#fdbb84', 1 '#e34a33')
+#set palette defined (0.0 "#ffffff", 0.05 "#a6cee3", 0.1 "#1f78b4", 0.5 "#b2df8a",  0.7 "#33a02c", 0.9 "#fb9a99", 1.0 "#e31a1c")
+set palette defined (0.0 "#ffffff", 0.075 "#1f78b4", 0.4 "#b2df8a",  0.6 "#33a02c", 0.9 "#fb9a99", 1.0 "#e31a1c")
+#set palette defined (0.0 "#ffffff", 0.075 "#1f78b4",  0.10 "#542788", 0.4 "#33a02c", 0.9 "#fb9a99", 1.0 "#e31a1c")
+#set palette defined (0.0 "#ffffff", 0.075 "#542788", 0.4 "#33a02c", 0.9 "#fb9a99", 1.0 "#e31a1c")
+set cbra [0:80]
+set cblabel "%occupancy"
+#set ylabel "MNase primary peaks"
+#set format y '%.0s%c'
+
+# ------------------------------------- #
+
+
+set output 'figures/figure4/panel_g/open_peaks.ori.complete.eps'
+set yrange [0.5:10255.5]
+set xtics ("occup_naked" 0,"occup_tf" 1,"occup_nuc" 2) rotate by -45
+set arrow 1 from -2.5, 3073 to 2.5, 3073 nohead lc rgb '#000000' front
+set arrow 2 from -2.5, 6393 to 2.5, 6393 nohead lc rgb '#000000' front
+set arrow 3 from -2.5, 10255 to 2.5, 10255 nohead lc rgb '#000000' back
+set label 1 '1 (n = 3073)'  at -1.5, 1536.5 right front
+set label 2 '2 (n = 3320)'  at -1.5, 4733.0 right front
+set label 3 '3 (n = 3862)'  at -1.5, 8324.0 right front
+set title 'All MNase peaks (Cond8)'
+plot '<cut -f2-15 data/figure4/panel_g/open_peaks_nclust_3.ori.tsv | sort -k14,14n | cut -f11-13' matrix with image notitle

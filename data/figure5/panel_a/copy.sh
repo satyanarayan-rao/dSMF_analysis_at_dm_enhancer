@@ -1,0 +1,1 @@
+scp ./excess_ratio_merged_after_edge_correction_filter_5.tsv_normalized.tsv $scp_satya_bodhi:/beevol/home/satyanarr/workplace/projects/dSMF_analysis_at_dm_enhancer/data/figure5/panel_a/cobinding_data_with_normalized_extent_of_cobinding.tsv

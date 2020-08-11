@@ -1,0 +1,1 @@
+rsync /home/satya/workplace/tmp/enhancer-cooperativity_figures/hch_and_dgd_suppressed_analysis/figure6_data/cobinding_frequency_at_enh.tsv $scp_satya_bodhi:/beevol/home/satyanarr/workplace/projects/dSMF_analysis_at_dm_enhancer/data/figure6/panel_b 

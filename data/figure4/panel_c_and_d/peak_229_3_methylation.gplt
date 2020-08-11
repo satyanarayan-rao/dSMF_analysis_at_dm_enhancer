@@ -1,0 +1,30 @@
+reset
+set terminal postscript size 4.5in, 7.5in font 'Arial, 15'
+#set terminal cairolatex eps size 4.5in,7.5in font 'Arial, 15'
+#set terminal pdf size 4.5in,7.5in font 'Arial, 15'
+set tmargin 1 
+set bmargin 0 
+set lmargin 3 
+set rmargin 3 
+set xra [-150 : 150] 
+unset xtics 
+unset ytics
+unset colorbox
+set style rect fc lt -1 fs solid 0.1 noborder
+set obj rect from -15, graph 0 to 15, graph 1    
+set output 'peak_229_3_methylation.eps'
+#set output 'peak_229_3_methylation.mat.tsv'
+set multiplot layout 12, 1
+plot 'mnase_data.tsv' u 1:2 w l lc rgb "#31a354" lw 2  notitle 
+load 'methylation_params.gplt'
+set yra [452: 0 ]
+set arrow 1 from -200, 105 to 150, 105 front lc rgb '#636363' lw 2 nohead
+set label 1 'n = 105' at -160, 52 right front
+set arrow 2 from -200, 219 to 150, 219 front lc rgb '#636363' lw 2 nohead
+set label 2 'n = 114' at -160, 162 right front
+set arrow 3 from -200, 452 to 150, 452 front lc rgb '#636363' lw 2 nohead
+set label 3 'n = 233' at -160, 335 right front
+#set arrow 4 from -200, 477 to 150, 477 front lc rgb '#636363' lw 2 nohead
+#set label 4 'n = 25' at -160, 464 right front
+#plot 'peak_229_3_methylation.mat.tsv' mat u ($1 - 150):2:3 w image notitle
+plot 'methyl_sort' mat u ($1 - 150):2:3 w image notitle

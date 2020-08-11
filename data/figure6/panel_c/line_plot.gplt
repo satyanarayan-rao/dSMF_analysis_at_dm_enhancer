@@ -1,0 +1,32 @@
+set style data lines
+
+set style line 1 lt 2 lc rgb "#41b6c4" lw 2	
+set style line 2 lt 1 lc rgb "#225ea8" lw 2
+set style line 3 lt 2 lc rgb "#fd8d3c" lw 2	
+set style line 4 lt 1 lc rgb "#b10026" lw 2
+
+set ylabel "Norm. Freq."
+se xlabel "Separation between TF-pair (bp)"
+set xra [25:200]
+set yra [0:0.035]
+set ytics 0,0.01,0.08
+set xtics 0,50,300
+set terminal pdfcairo size 4.2,4 font "Arial,20"
+set key font ",18"
+set output "TF_SEP.pdf"
+plot './dist_1.hist' ls 1 title "0-25",\
+		 './dist_2.hist' ls 2 title "26-50",\
+		 './dist_3.hist' ls 3 title "51-75",\
+		 './dist_4.hist' ls 4 title "76-100"
+
+#set output "TF_SEP_SIG.pdf"
+#plot './dist_1_SIG.hist' ls 1 title "0-25",\
+#		 './dist_2_SIG.hist' ls 2 title "26-50",\
+#		 './dist_3_SIG.hist' ls 3 title "51-75",\
+#		 './dist_4_SIG.hist' ls 4 title "76-100"
+#
+#set output "TF_SEP_NOT_SIG.pdf"
+#plot './dist_1_NOT_SIG.hist' ls 1 title "0-25",\
+#		 './dist_2_NOT_SIG.hist' ls 2 title "26-50",\
+#		 './dist_3_NOT_SIG.hist' ls 3 title "51-75",\
+#		 './dist_4_NOT_SIG.hist' ls 4 title "76-100"

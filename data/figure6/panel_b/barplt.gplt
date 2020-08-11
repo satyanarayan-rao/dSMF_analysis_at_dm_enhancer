@@ -1,0 +1,7 @@
+reset
+set terminal pdf enhanced color size 6,6 font 'Arial, 15'
+set output 'freqeuncy_cobinding_at_enh.pdf'
+set xlab 'Number of Co-bound pairs of TFBS'
+set ylab 'Number of Enhancers' 
+set xra [-1:11]
+plot 'cobinding_frequency_at_enh.tsv' using 1:2 w boxes

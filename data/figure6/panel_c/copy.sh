@@ -1,0 +1,2 @@
+rsync /home/satya/workplace/tmp/enhancer-cooperativity_figures/hch_and_dgd_suppressed_analysis/figure6_data/dist_*hist $scp_satya_bodhi:/beevol/home/satyanarr/workplace/projects/dSMF_analysis_at_dm_enhancer/data/figure6/panel_c
+rsync /home/satya/workplace/tmp/enhancer-cooperativity_figures/hch_and_dgd_suppressed_analysis/figure6_data/plt_line $scp_satya_bodhi:/beevol/home/satyanarr/workplace/projects/dSMF_analysis_at_dm_enhancer/data/figure6/panel_c/line_plot.gplt 

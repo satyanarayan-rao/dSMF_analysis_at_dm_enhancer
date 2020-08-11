@@ -1,0 +1,13 @@
+set yra [0:2.2]
+set xra [-175:150]
+unset key
+set ytics ("Unmethylated C" 1, "Methylated C" 2)
+set size ratio 0.2
+unset x2tics
+unset y2tics
+set xtics scale 0
+set ytics scale 0
+set terminal pdfcairo
+set style rect fc lt -1 fs solid 0.1 noborder
+set obj rect from -15, graph 0 to 15, graph 1    
+set obj rect from 63, graph 0 to 93, graph 1

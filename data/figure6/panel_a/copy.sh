@@ -1,0 +1,1 @@
+rsync /home/satya/workplace/tmp/enhancer-cooperativity_figures/hch_and_dgd_suppressed_analysis/final_excess_ratio_merged_sam_analysis/excess_ratio_merged_after_edge_correction_filter_5.tsv_normalized.tsv $scp_satya_bodhi:/beevol/home/satyanarr/workplace/projects/dSMF_analysis_at_dm_enhancer/data/figure6/panel_a/normalized_extent_of_cobinding.tsv
